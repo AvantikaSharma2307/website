@@ -83,7 +83,7 @@ export default async function IndustryPage({ params }: { params: { slug: string 
         <FeaturesSection
           industry={industry.name}
           features={industry.features}
-          color={industry.color}
+          color={industry.color as 'blue' | 'purple' | 'green' | 'indigo' | 'default'}
         />
         <UseCaseSection
           industry={industry.name}
@@ -91,7 +91,7 @@ export default async function IndustryPage({ params }: { params: { slug: string 
         />
         <StatsSection
           industry={industry.name}
-          color={industry.color as 'blue' | 'purple' | 'green' | 'indigo' | 'orange' | 'default'}
+          color={industry.color as 'blue' | 'purple' | 'green' | 'indigo' | 'default'}
           stats={industry.stats.map((stat) => ({
             label: stat.label,
             value: stat.number,

@@ -2,11 +2,12 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import Problem from '@/components/Problem';
-import Solution from '@/components/Solution';
+import ProblemSolution from '@/components/ProblemSolution';
+import InteractiveDemo from '@/components/InteractiveDemo';
+import TechnicalFeatures from '@/components/TechnicalFeatures';
+import AgentTemplates from '@/components/AgentTemplates';
 import HowItWorks from '@/components/HowItWorks';
 import Features from '@/components/Features';
-import WhyConversAI from '@/components/WhyConversAI';
 import Testimonials from '@/components/Testimonials';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
@@ -17,9 +18,9 @@ const Index = () => {
   useEffect(() => {
     // Update SEO metadata when component mounts
     updateSEO({
-      title: 'Accelerating AI-Powered Conversations',
-      description: 'ConversAI Labs helps businesses automate conversations with AI across voice, WhatsApp, email and more, increasing customer satisfaction and reducing response times.',
-      keywords: 'conversational ai, ai assistant, voice ai, whatsapp ai, customer support automation, ai conversations, business automation',
+      title: 'Build Custom AI Agents That Actually Convert Leads | ConversAI',
+      description: 'Create intelligent voice bots in minutes. Upload your script, pick a voice, and let AI qualify leads 24/7 across voice, WhatsApp, and email. No-code agent builder with proven templates.',
+      keywords: 'ai agent builder, conversational ai, voice bot, lead qualification, ai automation, no-code ai, voice ai, whatsapp ai, customer support automation',
       url: window.location.href,
     });
     
@@ -31,11 +32,12 @@ const Index = () => {
     <div className="w-full overflow-x-hidden">
       <Header />
       <Hero />
-      <Problem />
-      <Solution />
+      <ProblemSolution />
+      <InteractiveDemo />
+      <TechnicalFeatures />
+      <AgentTemplates />
       <HowItWorks />
       <Features />
-      <WhyConversAI />
       <Testimonials />
       <CTA />
       <Footer />

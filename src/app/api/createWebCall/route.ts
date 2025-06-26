@@ -1,13 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import "server-only";
 
-const GLOBAL_PHONE_NUMBER = process.env.NEXT_PUBLIC_GLOBAL_PHONE_NUMBER;
-const RETELL_API_KEY = process.env.NEXT_PUBLIC_RETELL_API_KEY;
+const GLOBAL_PHONE_NUMBER = process.env.GLOBAL_PHONE_NUMBER;
+const RETELL_API_KEY = process.env.RETELL_API_KEY;
 
 export async function POST(req: NextRequest) {
   try {
+    // Verify environment variables are set
+    if (!GLOBAL_PHONE_NUMBER || !RETELL_API_KEY) {
+      return NextResponse.json(
+        { error: "Server configuration error. Please contact support." },
+        { status: 500 }
+      );
+    }
+
     const { agentId } = await req.json();
-    console.log('Inside')
+    
+    if (!agentId) {
+      return NextResponse.json(
+        { error: "Agent ID is required" },
+        { status: 400 }
+      );
+    }
+
     /* STEP 1 ─ Update the phone record so it routes to this agent */
     const patchRes = await fetch(
       `https://api.retellai.com/update-phone-number/${GLOBAL_PHONE_NUMBER}`,

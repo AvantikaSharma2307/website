@@ -36,23 +36,40 @@ export function ContactModal({ isOpen, onClose, industry }: ContactModalProps) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    setTimeout(() => {
-      setIsSubmitted(false);
-      onClose();
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        companySize: "",
-        message: "",
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: `industry-modal-${industry}`,
+        }),
       });
-    }, 3000);
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+          onClose();
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            company: "",
+            companySize: "",
+            message: "",
+          });
+        }, 3000);
+      } else {
+        console.error('Failed to submit contact form');
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: keyof typeof formData, value: string) => {

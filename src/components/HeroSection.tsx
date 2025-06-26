@@ -47,15 +47,6 @@ const colorMap = {
     badgeText: "text-purple-800",
     iconColor: "text-purple-600",
   },
-  orange: {
-    gradient: "from-orange-600 to-orange-800",
-    light: "from-orange-400/20 to-red-400/20",
-    accent: "from-orange-500/30 to-yellow-500/30",
-    button: "from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700",
-    badge: "from-orange-600/10 to-red-600/10 border-orange-200/50",
-    badgeText: "text-orange-800",
-    iconColor: "text-orange-600",
-  },
   red: {
     gradient: "from-red-600 to-red-800",
     light: "from-red-400/20 to-pink-400/20",

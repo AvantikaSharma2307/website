@@ -1,0 +1,171 @@
+
+> conversational-agents@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.3.3
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.28:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+   Using tsconfig file: ./tsconfig.json
+ ✓ Ready in 1335ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1830ms (1018 modules)
+ HEAD / 200 in 2074ms
+ GET / 200 in 111ms
+ ✓ Compiled /favicon.ico in 138ms (568 modules)
+ GET /favicon.ico 200 in 188ms
+ GET / 200 in 188ms
+ GET /favicon.ico 200 in 4ms
+ GET / 200 in 129ms
+ GET /favicon.ico 200 in 4ms
+ GET / 200 in 131ms
+ GET /favicon.ico 200 in 3ms
+ GET / 200 in 76ms
+ GET / 200 in 75ms
+ ✓ Compiled /_not-found in 260ms (1004 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 361ms
+ GET / 200 in 28ms
+ ✓ Compiled /favicon.ico in 85ms (569 modules)
+ GET /favicon.ico 200 in 142ms
+ GET / 200 in 212ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 27ms
+ GET /favicon.ico 200 in 5ms
+ ○ Compiling /industries/[slug] ...
+ ✓ Compiled /industries/[slug] in 1239ms (1978 modules)
+Error: Route "/industries/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at IndustryPage (src/app/industries/[slug]/page.tsx:71:46)
+  69 | // ----------- Main Page Component
+  70 | export default async function IndustryPage({ params }: { params: { slug: string } }) {
+> 71 |   const industry = getIndustryFromSlug(params.slug);
+     |                                              ^
+  72 |   if (!industry) return notFound();
+  73 |
+  74 |   return (
+Error: Route "/industries/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (src/app/industries/[slug]/page.tsx:33:46)
+  31 | // ----------- Metadata for SEO
+  32 | export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+> 33 |   const industry = getIndustryFromSlug(params.slug);
+     |                                              ^
+  34 |   if (!industry) return {};
+  35 |
+  36 |   return {
+Error: Route "/industries/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (src/app/industries/[slug]/page.tsx:53:44)
+  51 |       images: [
+  52 |         {
+> 53 |           url: `/images/industries/${params.slug}-og.jpg`,
+     |                                            ^
+  54 |           width: 1200,
+  55 |           height: 630,
+  56 |           alt: `${industry.name} Voice Bot Solutions`,
+Error: Route "/industries/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (src/app/industries/[slug]/page.tsx:64:44)
+  62 |       title: `${industry.name} Voice Bot Solutions`,
+  63 |       description: `Enhance your ${industry.name.toLowerCase()} services with AI voice automation.`,
+> 64 |       images: [`/images/industries/${params.slug}-twitter.jpg`],
+     |                                            ^
+  65 |     },
+  66 |   };
+  67 | }
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ GET /industries/healthcare-and-wellness 200 in 1634ms
+ ✓ Compiled /_not-found in 120ms (1982 modules)
+ GET /placeholder.svg?height=80&width=80 404 in 195ms
+Error: Route "/industries/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at IndustryPage (src/app/industries/[slug]/page.tsx:71:46)
+  69 | // ----------- Main Page Component
+  70 | export default async function IndustryPage({ params }: { params: { slug: string } }) {
+> 71 |   const industry = getIndustryFromSlug(params.slug);
+     |                                              ^
+  72 |   if (!industry) return notFound();
+  73 |
+  74 |   return (
+Error: Route "/industries/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (src/app/industries/[slug]/page.tsx:33:46)
+  31 | // ----------- Metadata for SEO
+  32 | export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+> 33 |   const industry = getIndustryFromSlug(params.slug);
+     |                                              ^
+  34 |   if (!industry) return {};
+  35 |
+  36 |   return {
+Error: Route "/industries/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (src/app/industries/[slug]/page.tsx:53:44)
+  51 |       images: [
+  52 |         {
+> 53 |           url: `/images/industries/${params.slug}-og.jpg`,
+     |                                            ^
+  54 |           width: 1200,
+  55 |           height: 630,
+  56 |           alt: `${industry.name} Voice Bot Solutions`,
+Error: Route "/industries/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (src/app/industries/[slug]/page.tsx:64:44)
+  62 |       title: `${industry.name} Voice Bot Solutions`,
+  63 |       description: `Enhance your ${industry.name.toLowerCase()} services with AI voice automation.`,
+> 64 |       images: [`/images/industries/${params.slug}-twitter.jpg`],
+     |                                            ^
+  65 |     },
+  66 |   };
+  67 | }
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ GET /industries/healthcare-and-wellness 200 in 183ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 27ms
+ GET /placeholder.svg?height=80&width=80 404 in 149ms
+ ✓ Compiled /favicon.ico in 247ms (1076 modules)
+ GET /favicon.ico 200 in 321ms
+Error: Route "/industries/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at IndustryPage (src/app/industries/[slug]/page.tsx:71:46)
+  69 | // ----------- Main Page Component
+  70 | export default async function IndustryPage({ params }: { params: { slug: string } }) {
+> 71 |   const industry = getIndustryFromSlug(params.slug);
+     |                                              ^
+  72 |   if (!industry) return notFound();
+  73 |
+  74 |   return (
+Error: Route "/industries/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (src/app/industries/[slug]/page.tsx:33:46)
+  31 | // ----------- Metadata for SEO
+  32 | export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+> 33 |   const industry = getIndustryFromSlug(params.slug);
+     |                                              ^
+  34 |   if (!industry) return {};
+  35 |
+  36 |   return {
+Error: Route "/industries/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (src/app/industries/[slug]/page.tsx:53:44)
+  51 |       images: [
+  52 |         {
+> 53 |           url: `/images/industries/${params.slug}-og.jpg`,
+     |                                            ^
+  54 |           width: 1200,
+  55 |           height: 630,
+  56 |           alt: `${industry.name} Voice Bot Solutions`,
+Error: Route "/industries/[slug]" used `params.slug`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (src/app/industries/[slug]/page.tsx:64:44)
+  62 |       title: `${industry.name} Voice Bot Solutions`,
+  63 |       description: `Enhance your ${industry.name.toLowerCase()} services with AI voice automation.`,
+> 64 |       images: [`/images/industries/${params.slug}-twitter.jpg`],
+     |                                            ^
+  65 |     },
+  66 |   };
+  67 | }
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ GET /industries/healthcare-and-wellness 200 in 247ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 27ms
+ GET /favicon.ico 200 in 39ms
+ GET /placeholder.svg?height=80&width=80 404 in 17ms
+ GET /placeholder.svg?height=80&width=80 404 in 19ms
+ GET /placeholder.svg?height=80&width=80 404 in 16ms
+ GET /placeholder.svg?height=80&width=80 404 in 16ms
+ GET /placeholder.svg?height=80&width=80 404 in 15ms
+ GET /placeholder.svg?height=80&width=80 404 in 16ms
+ GET /placeholder.svg?height=80&width=80 404 in 19ms
+ GET /placeholder.svg?height=80&width=80 404 in 18ms
+ GET / 200 in 28ms
+ GET / 200 in 16ms
+ GET / 200 in 165ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
+ GET /favicon.ico 200 in 7ms

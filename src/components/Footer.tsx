@@ -6,11 +6,23 @@ const Footer = () => {
   const footerSections = [
     {
       title: "Product",
-      links: ["Features", "Pricing", "Integrations", "API", "Security"],
+      links: [
+        { name: "Features", path: "/#features" },
+        { name: "Pricing", path: "/pricing" },
+        { name: "Demo", path: "/demo" },
+        { name: "Agent Templates", path: "/#agent-templates" },
+        { name: "Industries", path: "/#industries" },
+      ],
     },
     {
       title: "Resources",
-      links: ["Blog", "Case Studies", "Documentation", "Help Center", "Webinars"],
+      links: [
+        { name: "How It Works", path: "/#how-it-works" },
+        { name: "Case Studies", path: "/#testimonials" },
+        { name: "Help Center", path: "/contact" },
+        { name: "Admin Panel", path: "https://admin.conversailabs.com/" },
+        { name: "API Docs", path: "/contact" },
+      ],
     },
     {
       title: "Company",
@@ -35,7 +47,7 @@ const Footer = () => {
               <span className="text-2xl font-bold">ConversAI Labs</span>
             </div>
             <p className="text-gray-400 mb-6 text-sm">
-              AI-First Lead Management Platform. Qualify, nurture, and convert across every channel.
+              No-code AI agent builder. Create intelligent voice bots that qualify leads 24/7 across voice, WhatsApp, and email.
             </p>
             <div className="flex space-x-4 mb-6">
               <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 cursor-pointer transition-colors">
@@ -55,24 +67,27 @@ const Footer = () => {
             <div key={index} className="mt-8 sm:mt-0">
               <h3 className="text-lg font-semibold mb-4">{section.title}</h3>
               <ul className="space-y-2">
-                {typeof section.links[0] === "string"
-                  ? (section.links as string[]).map((link, i) => (
-                      <li key={i}>
-                        <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                          {link}
-                        </a>
-                      </li>
-                    ))
-                  : (section.links as { name: string; path: string }[]).map((linkObj, i) => (
-                      <li key={i}>
-                        <Link
-                          href={linkObj.path}
-                          className="text-gray-400 hover:text-white transition-colors text-sm"
-                        >
-                          {linkObj.name}
-                        </Link>
-                      </li>
-                    ))}
+                {(section.links as { name: string; path: string }[]).map((linkObj, i) => (
+                  <li key={i}>
+                    {linkObj.path.startsWith('http') ? (
+                      <a
+                        href={linkObj.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                      >
+                        {linkObj.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={linkObj.path}
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                      >
+                        {linkObj.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
           ))}

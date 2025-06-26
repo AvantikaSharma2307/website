@@ -7,6 +7,10 @@ const Hero = () => {
     window.open('https://wa.me/919953053281', '_blank');
   };
 
+  const handleSeeHowItWorks = () => {
+    window.open('https://admin.conversailabs.com/', '_blank');
+  };
+
   return (
     <section className="relative mt-8 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden pt-20 pb-8 overflow-x-hidden min-h-[calc(100vh-64px)]">
       {/* Background Animation */}
@@ -21,31 +25,36 @@ const Hero = () => {
           {/* Left: Text */}
           <div className="text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-              AI-First Lead Management, 
+              Build Custom AI Agents
               <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> 
-                Across Every Channel
+                That Actually Convert Leads
               </span>
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-              Qualify, engage, and convert more leads—automatically. Let AI handle every touchpoint, so you never miss an opportunity.
+              Create intelligent voice bots in minutes. Upload your script, pick a voice, and let AI qualify leads 24/7 across voice, WhatsApp, and email.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6 sm:mb-8">
               <Button 
                 size="lg" 
-                onClick={handleConnectWithUs}
+                onClick={handleSeeHowItWorks}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
               >
-                Connect with Us
+                Build Your First AI Agent Free
               </Button>
-              <Button variant="outline" size="lg" className="border-2 border-gray-300 hover:border-blue-500 px-8 py-4 text-lg font-semibold text-black">
-                See How It Works
+              <Button 
+                variant="outline" 
+                size="lg" 
+                onClick={handleConnectWithUs}
+                className="border-2 border-gray-300 hover:border-blue-500 px-8 py-4 text-lg font-semibold text-black"
+              >
+                See 5-Minute Demo
               </Button>
             </div>
             
             <p className="text-xs sm:text-sm text-gray-500 italic">
-              Loved by sales, marketing, and customer success teams worldwide.
+              No credit card required • 50 free calls • Setup in under 10 minutes
             </p>
           </div>
           
@@ -55,20 +64,20 @@ const Hero = () => {
             <div className="w-full max-w-md mx-auto overflow-x-auto">
               <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 border border-gray-200 w-full min-w-[300px] sm:min-w-0">
                 <div className="flex items-center justify-between mb-4 sm:mb-6">
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">Live AI Conversations</h3>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">Agent Builder Dashboard</h3>
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                     <span className="text-xs sm:text-sm text-gray-600">Active</span>
                   </div>
                 </div>
                 
-                {/* Conversation Cards */}
+                {/* Agent Cards */}
                 <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-blue-50 rounded-lg border border-blue-200 animate-fade-in">
                     <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                     <div className="flex-1">
-                      <p className="text-xs sm:text-sm font-medium text-gray-900">Voice Call - John D.</p>
-                      <p className="text-[10px] sm:text-xs text-gray-600">Qualifying lead for enterprise demo...</p>
+                      <p className="text-xs sm:text-sm font-medium text-gray-900">Lead Qualifier Bot</p>
+                      <p className="text-[10px] sm:text-xs text-gray-600">Professional voice • 47 calls today</p>
                     </div>
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   </div>
@@ -76,8 +85,8 @@ const Hero = () => {
                   <div className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-green-50 rounded-lg border border-green-200 animate-fade-in delay-300">
                     <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                     <div className="flex-1">
-                      <p className="text-xs sm:text-sm font-medium text-gray-900">WhatsApp - Sarah M.</p>
-                      <p className="text-[10px] sm:text-xs text-gray-600">Scheduling product demo for next week...</p>
+                      <p className="text-xs sm:text-sm font-medium text-gray-900">Support Assistant</p>
+                      <p className="text-[10px] sm:text-xs text-gray-600">WhatsApp • Hinglish • 23 resolved</p>
                     </div>
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   </div>
@@ -85,8 +94,8 @@ const Hero = () => {
                   <div className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-purple-50 rounded-lg border border-purple-200 animate-fade-in delay-500">
                     <Users className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
                     <div className="flex-1">
-                      <p className="text-xs sm:text-sm font-medium text-gray-900">Email - TechCorp Inc.</p>
-                      <p className="text-[10px] sm:text-xs text-gray-600">Following up on pricing inquiry...</p>
+                      <p className="text-xs sm:text-sm font-medium text-gray-900">Appointment Scheduler</p>
+                      <p className="text-[10px] sm:text-xs text-gray-600">Email • 12 bookings today</p>
                     </div>
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   </div>
@@ -94,8 +103,8 @@ const Hero = () => {
                 
                 <div className="mt-4 sm:mt-6 p-2 sm:p-3 bg-gray-50 rounded-lg">
                   <div className="flex justify-between items-center text-xs sm:text-sm">
-                    <span className="text-gray-600">Today&apos;s Qualified Leads</span>
-                    <span className="font-bold text-xl sm:text-2xl text-green-600">47</span>
+                    <span className="text-gray-600">Active AI Agents</span>
+                    <span className="font-bold text-xl sm:text-2xl text-blue-600">3</span>
                   </div>
                 </div>
               </div>

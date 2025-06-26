@@ -2,12 +2,13 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import Header from '@/components/Header';
-import { HeroSection } from '@/components/HeroSection';
+import  HeroSection  from '@/components/HeroSection';
 import { FeaturesSection } from '@/components/FeaturesSection';
 import UseCaseSection from '@/components/UseCaseSection';
 import StatsSection from '@/components/StatsSection';
 import FAQSection from '@/components/FAQSection';
 import { CTABanner } from '@/components/CTABanner';
+
 
 import industriesData from '@/data/industriesfinal.json';
 
@@ -76,10 +77,9 @@ export default async function IndustryPage({ params }: { params: { slug: string 
       <Header />
       <main className="min-h-screen">
         <HeroSection
-          industry={industry.name}
-          description={industry.description}
-          color={industry.color}
+          industryData={industry}
         />
+       
         <FeaturesSection
           industry={industry.name}
           features={industry.features}

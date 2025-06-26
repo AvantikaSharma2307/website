@@ -362,7 +362,7 @@ export default function HeroSection({ industryData }: VoiceBotHeroProps) {
                   />
                 </motion.div>
                 <p className="text-sm font-medium text-gray-700">
-                  "Hello! How can I help you for {industryData.features[1]}?"
+                  &quot;Hello! How can I help you for {industryData.features[1]||"your needs"}?&quot;
                 </p>
                 <div className="mt-2 flex justify-center">
                   <VoiceWave color={industryData.color} />
